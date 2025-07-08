@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face{
+    font-family: 'Android';
+    src: url('fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+:root{/*variaveis em css*/
+    --cor0:#ebe5c5;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#053d1e;
+
+    --fonte-padrao: arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cusive;
+    --fonte-android: 'Android', cursive;
+}
+*{ /*Configurações globais*/
+    margin: 0px;
+    padding: 5px;
+}
+body{/*Corpo do site*/
+    background-color:var(--cor0); 
+    font-family: var(--fonte-padrao)
+}
+a.externo::after{
+    content: '\1F517';
+}
+header{ /*cabeçalho*/
+    background-image:linear-gradient(to bottom,#2fa866,#1a5c37);
+    min-height: 100px; /*Altura minima*/
+    text-align: center; /*Texto centralizado*/
+    padding-top: 40px; /*espaço entre o conteúdo e a borda, no alto*/
+    box-shadow: 0px 7px 7px #021f0fd3; /*Sombras*/
+}
+header h1{ /*Titulo do header*/
+   color: #ffffff; /*cor da letra*/
+   font-family: var(--fonte-destaque); /*fonte*/
+   font-weight: normal;
+   font-size: 3em; /*Tamanho da fonte*/
+   margin-bottom: 20px; /*Margem abaixo*/
+   text-shadow: 2px 2px 0px #000000d2; /*Sombras no texto*/
+}
+header > p{ /*paragrafos do header*/
+    color: #ffffff; /*Cor da letra*/
+    font-family: var(--fonte-padrao); /*fonte*/
+    font-size: 1.2em;  /*Tamanho da fonte*/
+    margin-bottom: 20px; /*Margem abaixo*/
+    max-width: 600px; /*largura maxima*/
+    margin:auto; /*centralizar elemento*/
+    padding-right: 10px ; /*espaço entre o conteudo e a borda, do lado direito*/
+    padding-left: 10px; /*espaço entre o conteudo e borda, do lado esquerdo*/
+    text-shadow: 2px 2px 0px #000000d2; /*Sombras nas letras*/
+}
+nav{ /*Area onde fica os links*/
+    background-color: var(--cor4); /*cor da area*/
+    padding: 10px; /*espaço entre o conteudo e a borda*/
+    box-shadow: 0px 7px 7px #021f0fd3; /*sombra*/
+}
+nav > a{ /*âncoras localizadas no nav*/
+    color: #ffffff; /*cor da letra*/
+    padding: 10px; /*espaço entre conteudo e a borda*/
+    text-decoration: none; /*decoração do texto, nenhuma*/
+    font-weight: bold;/*espessura da fonte, negrito*/
+}
+nav > a:hover{ /*Quando passar o mouse por cima de uma ancora localizada no nav*/
+    background-color: #2fa866; /*Vai ficar dessa cor*/
+    color: var(--cor5); /*E a letra dessa*/
+}
+main{ /*Area principal*/
+    min-width: 300px; /*Largura minima*/
+    max-width: 1000px; /*Largura maxima*/
+    margin: auto; /*centralizar elemento*/
+    margin-bottom: 30px; /*Margem abaixo*/
+    padding: 20px; /*Espaço entre o conteúdo e a borda*/
+    background-color: #ffffff; /*cor da area principal*/
+    box-shadow: 0px 0px 10px #010a0593 ; /*Sombras na caixa*/
+    
+}
+main h1{ /*h1 do main*/
+    color: var(--cor5); /*cor da letra*/
+    font-family: var(--fonte-android); /*fonte*/
+    font-weight: normal;
+    font-size: 1.8em;
+}
+main h2{ /*h2 do main*/
+    color: var(--cor4); /*cor da letra*/
+    font-family: var(--fonte-android); /*fonte*/
+    font-weight: normal;
+    font-size: 1.2em;/*Tamanho da fonte*/
+    background-image: linear-gradient(to right, var(--cor1),transparent);
+    text-indent: 8px;
+}
+main p{ /*p do main*/
+    margin: 15px 0px; /*margem*/
+    text-align: justify; /*texto justificado*/
+    text-indent: 30px;/*indentação no começo do paragrafo*/
+    line-height: 2em; /*espaço entre as linhas do texto*/
+}
+main a{ /*ancora do main*/
+    text-decoration: none;/*sem decoração no texto*/
+    font-weight: bold; /*espessura da fonte, negrito*/
+    color: var(--cor4); /*cor da letra*/
+}
+main a:hover{
+    text-decoration: underline;
+}
+main > img{ /*imagens no main*/
+    width: 100%; /*ocupará 100% da largura do main*/
+}
+main > img.pequeno { /*imagem com o id "pequeno" dentro do main*/
+    display: block; /*faz com que o elemento se comporte como um bloco*/
+    max-width: 200px;/*Largura maxima*/
+    margin:auto;/*centralizar elemento*/
+}
+div.video{
+    background-color: #053d1e; /*Define a cor de fundo verde escuro*/
+    margin: 0px -20px 30px -20px; /*margens externas, 0px (sem espaço acima),-20px o elemento vai "invadir" o lado direito, 30px espaço de 30px abaixo, -20px o elemento vai "invadir" o lado esquerdo*/
+    padding: 20px; /*spaçamento interno de 20px em todos os lados.*/
+    padding-bottom: 57%; /*Isso define a altura proporcional à largura do elemento. 56% é aproximadamente igual a uma proporção de 16:9, usada em vídeos.*/
+    position: relative;/*Permite que elementos posicionados com `absolute`** fiquem *relativos* a essa `div`*/
+}
+div.video > iframe{
+    position: absolute; /*O iframe sai do fluxo normal da página e é posicionado em relação ao .video (porque .video tem position: relative).*/
+    top: 5%; /*Afasta o iframe 5% da parte superior*/
+    left: 5%;/*5% da esquerda */
+    width: 90%;/*O iframe ocupa 90% da largura e altura do container .video, o que, somado aos 5% de cada lado (top/left), o centraliza com uma "moldura" de 5% em todos os lados.*/
+    height: 90%;
+}
+
+aside{
+    background-color: var(--cor1); /*cor da caixa*/
+    padding: 10px; /*Espaço entre o conteudo e a borda*/
+    border-radius:10px ;/*bordas arredondadas*/
+    box-shadow: 0px 0px 10px #0000009f;
+}
+aside > h3{
+    background-color: var(--cor4);/*Cor da caixa doh3*/
+    color: #ffffff; /*Cor da letra*/
+    padding: 10px; /*Espaço entre o conteudo e a borda*/
+    margin: -10px -10px 0px -10px; /*margens negativas, vão para o lado contrário*/
+    border-radius: 10px 10px 0px 0px; /*bordas arredondadas*/
+}
+aside > ul{
+    list-style: '\2714\0a0'; /*Emoji*/
+    list-style-position: inside ; /*posição*/
+    columns: 2; /*colunas*/
+}
+footer{/*rodapé*/
+    background-color:var(--cor5); /*cor do rodapé*/
+    color: #ffffff;/*cor da fonte*/
+    text-align: center; /*Texto centralizado*/
+    font-size: 0.8em;/*Tamanho da fonte*/
+    padding: 5px;/*Espaço entre conteúdo e a borda*/
+}
