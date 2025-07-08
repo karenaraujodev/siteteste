@@ -114,8 +114,15 @@ main > img{ /*imagens no main*/
 }
 main > img.pequeno { /*imagem com o id "pequeno" dentro do main*/
     display: block; /*faz com que o elemento se comporte como um bloco*/
+    width: 100%;
     max-width: 200px;/*Largura maxima*/
+    height: auto;
     margin:auto;/*centralizar elemento*/
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 div.video{
     background-color: #053d1e; /*Define a cor de fundo verde escuro*/
@@ -131,7 +138,11 @@ div.video > iframe{
     width: 90%;/*O iframe ocupa 90% da largura e altura do container .video, o que, somado aos 5% de cada lado (top/left), o centraliza com uma "moldura" de 5% em todos os lados.*/
     height: 90%;
 }
-
+@media (max-width: 600px) {
+aside > ul{
+    columns: 1;
+}
+}
 aside{
     background-color: var(--cor1); /*cor da caixa*/
     padding: 10px; /*Espaço entre o conteudo e a borda*/
